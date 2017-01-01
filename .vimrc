@@ -39,6 +39,7 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+execute pathogen#infect()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -249,6 +250,17 @@ set laststatus=2
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
+" Set lightline theme
+let g:lightline = {
+  \ 'component': {
+  \   'readonly': '%{&readonly?"x":""}',
+  \ },
+  \ 'separator': { 'left': '', 'right': '' },
+  \ 'subseparator': { 'left': '|', 'right': '|' }
+  \ }
+
+set noshowmode
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
@@ -389,6 +401,11 @@ nnoremap <leader>l :<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list?<cr>
 
 " Toggle line numbers
 map <leader>n :setlocal nu! nu?<cr>
+
+" Toggle tagbar plugin
+nmap <F8> :TagbarToggle<CR>
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
