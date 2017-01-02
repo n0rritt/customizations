@@ -217,4 +217,4 @@ bindsym XF86AudioPrev exec playerctl previous
 #bindsym $mod+F10 exec xbacklight -inc 10
 
 # remap caps lock tp ctrl
-exec_always --no-startup-id setxkbmap -option "caps:ctrl_modifier"
+exec_always --no-startup-id "sleep 1; setxkbmap -option caps:ctrl_modifier"
